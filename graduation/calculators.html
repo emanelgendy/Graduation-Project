@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fitness AI Trainer</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+     <link href="img/favicon.ico" rel="icon"> 
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@800&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+        
+        
+        
+               
+        
+                .categories__container {
+                    margin: 0 auto;
+                    padding: 1.25rem 1rem;
+                }
+        
+        
+                .categories__suptitle {
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: #8F12FD;
+                }
+        
+                .categories__title {
+                    font-size: 1.875rem;
+                    line-height: 2.25rem;
+                    color: #111827;
+                    font-weight: 800;
+                    text-align: center;
+                    margin-bottom: 1.25rem;
+                }
+        
+        
+                .categories__description {
+                    font-size: 1.25rem;
+                    line-height: 1.75rem;
+                    color: black;
+                    text-align: center;
+                    max-width: 813px;
+                    margin: 0 auto 3rem;
+                }
+        
+                .categories__grid {
+                    position: relative;
+                    left: 1.6%;
+                    display: flex;
+                    gap: 5rem;
+                    width: 97%;
+                }
+        
+        
+        
+        
+                .categories__title {
+                    color: black;
+                }
+        
+                .categories__description {
+                    color: black;
+                }
+        
+                .category {
+                    padding-top: 1.5rem;
+                    position: relative;
+                    width: 100%;
+                    height: 47vh;
+                    text-decoration: none;
+                    border-radius: 6px;
+                    transform: scale(1, 1);
+                    transition: 0.2s all ease-in-out;
+                }
+        
+                .category:hover {
+                    transform: scale(1.1, 1.1);
+                }
+        
+                .category__icon {
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+                    position: absolute;
+                    width: 48px;
+                    height: 48px;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 8px;
+                }
+        
+                .category__info {
+                    padding: 3.5rem 1.5rem 2rem;
+                    border-radius: 8px;
+                    background: white;
+                    width: 100%;
+                    height: 100%;
+                }
+        
+                .category__title {
+                    font-size: 1.5rem;
+                    line-height: 1.75rem;
+                    text-align: center;
+                    color: black;
+                    margin-bottom: 1.25rem;
+                    font-family: 'Kumbh Sans', sans-serif;
+                }
+        
+                .category__description {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    color: black;
+                    text-align: center;
+                    font-family: 'Nunito Sans', sans-serif;
+                }
+        
+                .category__info {
+                    background: white;
+                }
+            </style>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/61daa0b400.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0" id="home">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">FAIT App</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="index.html" class="nav-item nav-link">Feature</a>
+                        <a href="exercise-details.html" class="nav-item nav-link" onclick="scroll()">Exercise</a>
+                        <a href="calculators.html" class="nav-item nav-link active">Health Calculators</a>
+                        <a href="index.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                       </div>
+            </nav>
+
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5">
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="categories">
+            <div class="container categories__container">
+                <h3 class="categories__suptitle">3 Calculators</h3>
+                <h1 class="categories__title">Health &amp; Fitness Calculators</h1>
+                <p class="categories__description">Planning and living a healthy lifestyle require honest calculations.
+                    Input your current and desired body parameters to understand numbers such as body mass index (BMI),
+                    ideal weight, calorie intake, and other health indicators. They will help you make informed nutrition,
+                    fitness, and overall well-being decisions.</p>
+                <div class="categories__grid">
+                    <a href="bmi.html" class="category">
+                        <img src="./images/bmi-icon.png" alt="BMI Calculator" class="category__icon">
+                        <div class="category__info">
+                            <h4 class="category__title">BMI Calculator</h4>
+                            <p class="category__description">The free Body Mass Index calculator, also known as BMI,
+                                computes and classifies BMI for children and adults using data obtained from WHO and CDC.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="calorie.html" class="category">
+                        <img src="./images/calorie-icon.png" alt="Calorie Calculator" class="category__icon">
+                        <div class="category__info">
+                            <h4 class="category__title">Calorie Calculator</h4>
+                            <p class="category__description">This calorie calculator computes how many calories are required
+                                daily to maintain, decrease, or gain weight. Learn about the different types of calories and
+                                how they affect you.</p>
+                        </div>
+                    </a>
+                    <a href="bmr.html" class="category">
+                        <img src="./images/bmr-icon.png" alt="BMR Calculator" class="category__icon">
+                        <div class="category__info">
+                            <h4 class="category__title">BMR Calculator</h4>
+                            <p class="category__description">Free BMR calculator uses well-known algorithms to calculate the
+                                basal metabolic rate. Also, find out more about the factors that influence BMR.</p>
+                        </div>
+                    </a>
+    
+                </div>
+            </div>
+        </section>
+        <!-- Navbar & Hero End -->
+
+        
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <h4 class="text-white mb-4">Address</h4>
+                        <p><i class="fas fa-map-marker-alt me-3"></i>123 Street, Beni-Suif, Egypt</p>
+                        <p><i class="fas fa-phone me-3"></i>+012 345 67890</p>
+                        <p><i class="fa fa-envelope me-3"></i>Graduation@project.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h4 class="text-white mb-4">Quick Link</h4>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h4 class="text-white mb-4">Popular Link</h4>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h4 class="text-white mb-4">Newsletter</h4>
+                        <p>With FAIT, you'll have everything you need
+                            to reach your goals and begin your fitness journey.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary-gradient fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            <p class="mb-0 ps-3 border-l f-13">
+                                Copyright ©2023 <a href="https://codebase-tech.com/" target="_blank" class="code">Codebasetech.com</a> 
+                              </p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script>
+        // Get the "Explore Exercises" button element
+        const exploreExercisesButton = document.querySelector(".ex-btn");
+    
+        // Add event listener to scroll to the search section when clicked
+        exploreExercisesButton.addEventListener("click", () => {
+          const searchSection = document.getElementById("search-section");
+          searchSection.scrollIntoView({ behavior: "smooth" });
+        });
+    
+      </script>
+      <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
